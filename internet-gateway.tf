@@ -9,6 +9,7 @@ resource "aws_internet_gateway" "igw-west" {
 resource "aws_internet_gateway_attachment" "igw-attach-west" {
   internet_gateway_id = aws_internet_gateway.igw-west.id
   vpc_id              = aws_vpc.vpc-west.id
+  provider = aws.aws-west
 }
 
 
@@ -24,4 +25,5 @@ resource "aws_internet_gateway" "igw-east" {
 resource "aws_internet_gateway_attachment" "igw-attach-east" {
   internet_gateway_id = aws_internet_gateway.igw-east
   vpc_id              = aws_vpc.vpc-east.id
+  provider = aws.aws-east
 }
