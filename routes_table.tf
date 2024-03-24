@@ -3,7 +3,7 @@ resource "aws_route_table" "routes-west" {
   vpc_id = aws_vpc.vpc-west.id
 
   route {
-    cidr_block = "0.0.0.0/24"
+    cidr_block = "0.0.0.0/0"
     gateway_id = aws_internet_gateway.igw-west.id
   }
 
@@ -18,7 +18,7 @@ resource "aws_route_table" "routes-east" {
   vpc_id = aws_vpc.vpc-east.id
 
   route {
-    cidr_block = "0.0.0.0/24"
+    cidr_block = "0.0.0.0/0"
     gateway_id = aws_internet_gateway.igw-east.id
   }
 
