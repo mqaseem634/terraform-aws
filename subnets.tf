@@ -11,7 +11,7 @@ resource "aws_subnet" "subnet-west2a" {
 
 resource "aws_subnet" "subnet-west2b" {
   provider = aws.aws-west
-  vpc_id     = aws_vpc.vpc-east.id
+  vpc_id     = aws_vpc.vpc-west.id
   cidr_block = "10.5.20.0/24"
   availability_zone = "us-west-2b"
 
@@ -31,6 +31,7 @@ resource "aws_subnet" "subnet-east2a" {
   }
 }
 
+
 resource "aws_subnet" "subnet-east2b" {
   provider = aws.aws-east
   vpc_id     = aws_vpc.vpc-east.id
@@ -41,5 +42,3 @@ resource "aws_subnet" "subnet-east2b" {
     Name = "tf-subnet-east2b"
   }
 }
-
-
