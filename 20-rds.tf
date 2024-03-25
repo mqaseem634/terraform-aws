@@ -18,6 +18,7 @@ resource "aws_db_instance" "rdsdb-west" {
   skip_final_snapshot  = true
   db_subnet_group_name = aws_db_subnet_group.subnet_group_west.name
   vpc_security_group_ids = [ aws_security_group.Allow_mysql-west.id ]
+  publicly_accessible = true
 }
 
 resource "aws_db_subnet_group" "subnet_group_east" {
@@ -41,4 +42,5 @@ resource "aws_db_instance" "rdsdb-east" {
   skip_final_snapshot  = true
   db_subnet_group_name = aws_db_subnet_group.subnet_group_east.name
   vpc_security_group_ids = [ aws_security_group.Allow_mysql-east.id ]
+  publicly_accessible = true
 }
