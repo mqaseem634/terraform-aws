@@ -3,7 +3,7 @@ resource "aws_instance" "server01-west" {
   ami = "ami-08116b9957a259459"
   instance_type = "t2.micro"
   subnet_id = aws_subnet.subnet-west2a.id
-  key_name = aws_key_pair.server01-key-west
+  key_name = aws_key_pair.server01-key-west.key_name
 }
 
 
@@ -19,7 +19,7 @@ resource "aws_instance" "server01-east" {
   ami = "ami-0b8b44ec9a8f90422"
   instance_type = "t2.micro"
   subnet_id = aws_subnet.subnet-east2a.id
-  key_name = aws_key_pair.server01-key-east
+  key_name = aws_key_pair.server01-key-east.key_name
 }
 
 
